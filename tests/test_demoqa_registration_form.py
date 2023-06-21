@@ -52,7 +52,8 @@ def test_elements_form():
     browser.element('#state .css-1wa3eu0-placeholder').should(have.exact_text('Select State'))
     browser.element('#city .css-1wa3eu0-placeholder').should(have.exact_text('Select City'))
 
-    # Проверка перехода по лого сайта
+    # Проверка лого и перехода по нему
+    browser.element('#app a img').should(have.attribute('src').value('https://demoqa.com/images/Toolsqa.jpg'))
     browser.element('#app a img').click()
     browser.should(have.url('https://demoqa.com/'))
 
